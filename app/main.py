@@ -1,5 +1,9 @@
 from fastapi import FastAPI, Request, Depends
+<<<<<<< HEAD
 from fastapi.responses import HTMLResponse, JSONResponse
+=======
+from fastapi.responses import HTMLResponse
+>>>>>>> f67649c638788975f488f41707aa1fd2164f4e45
 from fastapi.templating import Jinja2Templates
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -46,6 +50,7 @@ def home(request: Request):
 # CREATE ORDER
 @app.post("/create-payment")
 def create_payment(request: PaymentRequest):
+<<<<<<< HEAD
     try:
         result = initiate_payment(request.amount)
     except Exception as exc:
@@ -60,6 +65,9 @@ def create_payment(request: PaymentRequest):
         return JSONResponse(status_code=status_code, content=result)
 
     return result
+=======
+    return initiate_payment(request.amount)
+>>>>>>> f67649c638788975f488f41707aa1fd2164f4e45
 
 
 # SUCCESS PAGE

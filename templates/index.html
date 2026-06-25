@@ -82,8 +82,12 @@ async function pay() {
       status.innerHTML = '<div class="alert alert-success">Redirecting to PayPal...</div>';
       window.location.href = data.approve_link;
     } else {
+<<<<<<< HEAD
       const errorMessage = data.message || (data.details && JSON.stringify(data.details)) || 'Error creating payment order';
       status.innerHTML = `<div class="alert alert-danger">Error creating payment order: ${errorMessage}</div>`;
+=======
+      status.innerHTML = '<div class="alert alert-danger">Error creating payment order</div>';
+>>>>>>> f67649c638788975f488f41707aa1fd2164f4e45
       button.disabled = false;
       button.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#003087" class="me-2">
